@@ -1,5 +1,5 @@
 # C++ Boilerplate
-[![Build Status](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM?branch=master)](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM)
+[![Build Status](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM.svg?branch=master)](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM)
 [![Coverage Status](https://coveralls.io/repos/github/Gautam-Balachandran/SoftwareDev-MIDTERM/badge.svg?branch=master)](https://coveralls.io/github/Gautam-Balachandran/SoftwareDev-MIDTERM?branch=master)
 ---
 

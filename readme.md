@@ -1,7 +1,7 @@
 # C++ Boilerplate
 [![Build Status](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM.svg?branch=master)](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM)
 [![Coverage Status](https://coveralls.io/repos/github/Gautam-Balachandran/SoftwareDev-MIDTERM/badge.svg?branch=master)](https://coveralls.io/github/Gautam-Balachandran/SoftwareDev-MIDTERM?branch=master)
-[![License: MIT](https://img.shields.io/badge/License-EPL-red.svg)](https://opensource.org/licenses/EPL-2.0)
+[![License: MIT](https://img.shields.io/badge/License-CDDL-red.svg)](https://opensource.org/licenses/CDDL-1.0)
 ---
 
 ## Authors

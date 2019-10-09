@@ -28,6 +28,6 @@ In this project, we have implemented the steering control for the Ackermann kine
 </p>
 
 <p align="center">
-  <img width="250" height="5000" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/blob/Iteration-1/Images/Closed_Loop_Controller.png">
+  <img width="500" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/blob/Iteration-1/Images/Closed_Loop_Controller.png">
 </p>
 

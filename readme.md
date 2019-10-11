@@ -13,13 +13,13 @@ Sprint 1:
 
 Sprint 2:
  - Part 1 - Implementing the actual code : 
-  - Driver : Sri Sai Kaushik
-  - Navigator : Sri Manika Makam
-  - Design Keeper : Gautam Balachandran
- -Part 2 - Testing and code quality check : 
-  - Driver : Sri Manika Makam
-  - Navigator : Gautam Balachandran
-  - Design Keeper : Sri Sai Kaushik
+     * Driver : Sri Sai Kaushik
+     * Navigator : Sri Manika Makam
+     * Design Keeper : Gautam Balachandran
+ - Part 2 - Testing and code quality check : 
+     * Driver : Sri Manika Makam
+     * Navigator : Gautam Balachandran
+     * Design Keeper : Sri Sai Kaushik
 
 ## Overview
 

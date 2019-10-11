@@ -196,9 +196,14 @@ sudo apt install doxygen
 ```
 To generate doxygen documentation after installation use 
 ```
-doxygen ./Doxygen
+doxygen -g <config-file>
 ```
-
+where <config-file> is the name of the configuration file that you want to create. In this file edit the input and ouput directories, and the files that have to included and excluded while generating the Doxygen comments. Finally, to run the Doxygen configuration file, use the following command
+ ```
+doxygen <config-file>
+ ```
+This will generate a HTML and LATEX ouput of the Doxygen comments inside the output directory specified in the configurtion file.
+ 
 ## License
 ```
 Common Development and Distribution License 1.0

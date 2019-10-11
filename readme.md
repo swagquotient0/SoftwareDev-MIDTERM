@@ -35,6 +35,10 @@ The following assumptions are made while developing this project :-
 This project was completed using AIP with the involvement of 3 programmers using Pair-programming in turns. The detailed Product Backlog, Iteration Backlogs and Work Log are mentioned in the link given below : 
 https://docs.google.com/spreadsheets/d/1s-P0bJoN7X7E9u1Dm3FD0PoOtxiNC-nHBYtS63hynHs/edit?usp=sharing
 
+## Google Doc Link for Sprint Planning and notes
+https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/edit?usp=sharing
+
+
 ## Algorithm
   * The input heading and velocity are received from the user. These are considered as the desired heading and velocity.
   * The current heading and orientation of the vehicle are initialised as the heading and orientation errors initially.

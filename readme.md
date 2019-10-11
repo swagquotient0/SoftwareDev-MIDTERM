@@ -60,6 +60,7 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
 ## To-do tasks for pair programming (Driver navigator discussion)
 - [x] Create UML Class and Activity diagram.
 - [x] Create Google docs for meeting reflections. 
+- [x] Create code stubs based on the UML class diagram.
 - [ ] Develop the code for the project while following C++11 coding guidelines.
 - [ ] Check for design issues in the code
 - [ ] Update UML diagrams with changes in implementation.

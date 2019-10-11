@@ -50,14 +50,16 @@ https://docs.google.com/spreadsheets/d/1s-P0bJoN7X7E9u1Dm3FD0PoOtxiNC-nHBYtS63hy
 
 ## To-do tasks for pair programming (Driver navigator discussion)
 - [x] Create UML Class and Activity diagram.
-- [x] Run cpplint and cppcheck as part of Sprint 2.
-- [x] Add defect log and release backlog.
-- [x] Modify implementation pipeline using separate classes
-- [x] Update UML diagrams with changes in implementation.
-- [x] Write Unit Test cases for testing and perform the testing.
-- [x] Run Valgrind to detect memory leaks. Fix all detected memory leaks.
-- [x] Generate Doxygen documentation in the docs folder.
-- [x] Make sure that the repository is updated with all delivarables as mentioned in the proposal.
+- [x] Create Google docs for meeting reflections. 
+- [ ] Develop the code for the project while following C++11 coding guidelines.
+- [ ] Check for design issues in the code
+- [ ] Update UML diagrams with changes in implementation.
+- [ ] Write Unit Test cases for testing and check the test cases to ensure all possible scenarios are covered.
+- [ ] Perform testing and fix defects if any.
+- [ ] Run cpplint and cppcheck as part of Sprint 2.
+- [ ] Run Valgrind to detect memory leaks. Fix all detected memory leaks.
+- [ ] Generate Doxygen documentation in the docs folder.
+- [ ] Make sure that the repository is updated with all delivarables as mentioned in the proposal.
 
 ## Standard install via command-line
 ```

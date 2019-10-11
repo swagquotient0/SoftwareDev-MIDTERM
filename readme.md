@@ -103,7 +103,7 @@ cd ~/workspace
 git clone --recursive https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM
 ```
 
-In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of lane detector
+In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of SoftwareDev-MIDTERM
 
 ```
 cd ~/workspace
@@ -124,12 +124,12 @@ Source files may be edited under the "[Source Directory]" label in the Project E
 
 ## Build
 
-To build the project, in Eclipse, unfold laneDetector project in Project Explorer,
+To build the project, in Eclipse, unfold SoftwareDev-MIDTERM project in Project Explorer,
 unfold Build Targets, double click on "all" to build all projects.
 
 ## Run
 
-1. In Eclipse, right click on the laneDetector in Project Explorer,
+1. In Eclipse, right click on the SoftwareDev-MIDTERM in Project Explorer,
 select Run As -> Local C/C++ Application
 
 2. Choose the binaries to run (e.g. SoftwareDev-MIDTERM, cpp-test for unit testing)
@@ -198,7 +198,7 @@ To generate doxygen documentation after installation use
 ```
 doxygen -g <config-file>
 ```
-where <config-file> is the name of the configuration file that you want to create. In this file edit the input and ouput directories, and the files that have to included and excluded while generating the Doxygen comments. Finally, to run the Doxygen configuration file, use the following command
+where ```<config-file>``` is the name of the configuration file that you want to create. In this file edit the input and ouput directories, and the files that have to included and excluded while generating the Doxygen comments. Finally, to run the Doxygen configuration file, use the following command
  ```
 doxygen <config-file>
  ```

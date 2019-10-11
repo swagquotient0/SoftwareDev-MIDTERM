@@ -18,13 +18,26 @@ Sprint 2:
 
 ## Overview
 
-In this project, we have implemented the steering control for the Ackermann kinematic model. The control problem is to find the steering angle and the two driver velocities, given the expected heading and velocity of the robot or vehicle. The Ackermann steering model mechanism assumes that the steering angle of the front two wheels is calculated around a common center. As the rear wheels are assumed to be fixed, the center point is assumed to be along the line drawn from the axles of the rear wheels. The angle made by the center point to the tangent of the desired trajectory gives the desired steering angle. And, in order to calculate the drive wheel velocities, we have to consider the displacement of each of the wheels and their respective wheel radii which is assumed to be a constant value. The main goal of this model is to ensure that the vehicle always keeps moving in the desired trajectory with proper orientation. This controller plays a greater importance in autonomous driving applications and while buiding robots which can travel on uneven terrains.
+In this project, we have implemented the Steering Controller for the Ackermann kinematic model. The control problem is to find the steering angle and the two driver velocities, given the expected heading and velocity of the robot or vehicle. The Ackermann steering model mechanism assumes that the steering angle of the front two wheels is calculated around a common center. As the rear wheels are assumed to be fixed, the center point is assumed to be along the line drawn from the axles of the rear wheels. The angle made by the center point to the tangent of the desired trajectory gives the desired steering angle (*\phi*). And, in order to calculate the drive wheel velocities, we have to consider the displacement of each of the wheels and their respective wheel radii which is assumed to be a constant value. The main goal of this model is to ensure that the vehicle always keeps moving in the desired trajectory with proper orientation. This controller plays a greater importance in autonomous driving applications and while buiding robots which can travel on uneven terrains.
+
+The following assumptions are made while developing this project :-
+ 1. All vehicle parameters are known.
+ 2. The current position and orientation of the vehicle can be calculated at any time through sensor feedback. 
+ 3. Desired heading and velocity are continuously given to the system as input.
+ 4. Friction, Wheel slippage and actuator saturation is minimal.
 
 ## Agile Iterative Process (AIP)
 This project was completed using AIP with the involvement of 3 programmers using Pair-programming in turns. The detailed Product Backlog, Iteration Backlogs and Work Log are mentioned in the link given below : 
 https://docs.google.com/spreadsheets/d/1s-P0bJoN7X7E9u1Dm3FD0PoOtxiNC-nHBYtS63hynHs/edit?usp=sharing
 
 ## Algorithm
+  * The input heading and velocity are received from the user. These are considered as the desired heading and velocity.
+  * The current heading and orientation of the vehicle are initialised as the heading and orientation errors initially.
+  * Parameters like the Look ahead distance (L_h), the Propotional and Derivative gain (K_p and K_d) are calculated.
+  * The state variable for the non-linear control law are calculated from the heading and orientation errors.
+  * The values calculcated above are substituted into the non-linear control law and the output value is calculated.
+  * Till the ouput of the control law drops below an accepted threshold (~ 0), the heading and orientations are corrected to minimize their errors.
+  * Then the final heading and drive velocities are calculated and given as the output.
 
 <p align="center">
   <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/blob/Iteration-1/Images/Ackermann.-Steering-1.png">

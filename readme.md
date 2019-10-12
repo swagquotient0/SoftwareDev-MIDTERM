@@ -42,7 +42,7 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
 ## Algorithm
   * The input heading and velocity are received from the user. These are considered as the desired heading and velocity.
   * The current heading and orientation of the vehicle are initialised as the heading and orientation errors initially.
-  * Parameters like the Look ahead distance (<img src="https://latex.codecogs.com/gif.latex?L_h" title="L_h" />), the Propotional and Derivative gain (<img src="https://latex.codecogs.com/gif.latex?K_p" title="K_p" /> and <img src="https://latex.codecogs.com/gif.latex?K_d" title="K_d" />) are calculated.
+  * Parameters like the Look ahead distance (<img src="https://latex.codecogs.com/gif.latex?L_h" title="L_h" />), the Propotional (<img src="https://latex.codecogs.com/gif.latex?K_p" title="K_p" />) and Derivative gain (<img src="https://latex.codecogs.com/gif.latex?K_d" title="K_d" />) are calculated.
   * The state variable for the non-linear control law are calculated from the heading and orientation errors.
   * The values calculcated above are substituted into the non-linear control law and the output value is calculated.
   * Till the ouput of the control law drops below an accepted threshold (~ 0), the heading and orientations are corrected to minimize their errors.

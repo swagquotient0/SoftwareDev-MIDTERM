@@ -22,15 +22,15 @@ class AckermannController {
  /**
    * @brief Variable that define the heading.
    */
- std::vector<double> d;
+   std::vector<double> d;
  /**
    * @brief Variable that define the Orientation.
    */
- double theta;
+   double theta;
   /**
    * @brief Variables that define the velocity and the wheel base distance
    */
- double v,l;
+   double v,l;
  
  public:
  /**
@@ -38,50 +38,49 @@ class AckermannController {
    * @param  none
    * @return The heading vector containing the x and y positions of the heading.
    */
- std::vector<double> getD();
+   std::vector<double> getD();
  /**
    * @brief Setter method for the heading vector
    * @param  New heading vector to be set
    * @return none
    */
- void setD(vector<double> newD);
+   void setD(vector<double> newD);
  /**
    * @brief Getter method for the orientation
    * @param  none
    * @return The orientation of the vehicle
    */
- int getTheta();
+   int getTheta();
  /**
    * @brief Setter method for the orientation
    * @param  New orientation to be set
    * @return none
    */
- void setTheta(int newTheta);
+   void setTheta(int newTheta);
  /**
    * @brief Method to compute the look-ahead for the current velocity
    * @param Current Velocity of the vehicle
    * @return Computed Look-Ahead distance
    */
- double computLH(double vel);
+   double computLH(double vel);
  /**
    * @brief Method to compute the controller gains
    * @param Current Velocity of the vehicle
    * @return Vector of computed gains
    */
- std::vector<double> controlConstants(double vel);
+   std::vector<double> controlConstants(double vel);
  /**
    * @brief Method to compute the steering angle
    * @param Current heading and wheel base distance
    * @return Computed Steering angle
    */
- double computeSteering(std::vector<double> d, double l);
+   double computeSteering(std::vector<double> d, double l);
  /**
    * @brief Method to compute the wheel drive velocities
    * @param Current heading calculated
    * @return Computed vector of the wheel velocities
    */
- std::vector<double> driveVelocities(int calcTheta);
- 
+   std::vector<double> driveVelocities(int calcTheta);
 };
  
  

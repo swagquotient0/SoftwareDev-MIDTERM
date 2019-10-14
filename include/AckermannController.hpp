@@ -9,6 +9,7 @@
 #define INCLUDE_ACKERMANNCONTROLLER_HPP_
 
 #include<iostream>
+#include<vector>
 
 /**
  * @Author Gautam Balachandran

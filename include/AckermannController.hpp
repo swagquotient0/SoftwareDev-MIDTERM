@@ -45,7 +45,7 @@ class AckermannController {
    * @param  New heading vector to be set
    * @return none
    */
-   void setD(vector<double> newD);
+   void setD(std::vector<double> newD);
  /**
    * @brief Getter method for the orientation
    * @param  none

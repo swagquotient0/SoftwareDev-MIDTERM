@@ -49,8 +49,8 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
   * Then the final heading and drive velocities are calculated and given as the output.
 
 <p align="center">
-  <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/blob/Iteration-1/Images/Ackermann.-Steering-1.png">
-  <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/blob/Iteration-1/Images/Ackermann.-Steering-2.png">
+  <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/Images/Ackermann.-Steering-1.png">
+  <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/Images/Ackermann.-Steering-2.png">
 </p>
 
 <p align="center">

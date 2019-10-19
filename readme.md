@@ -64,9 +64,9 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
 - [x] Create Google docs for meeting reflections. 
 - [x] Create code stubs based on the UML class diagram.
 - [x] Develop the code for the project while following C++11 coding guidelines.
-- [ ] Check for design issues in the code
-- [ ] Update UML diagrams with changes in implementation.
-- [ ] Write Unit Test cases for testing and check the test cases to ensure all possible scenarios are covered.
+- [x] Check for design issues in the code
+- [x] Update UML diagrams with changes in implementation.
+- [x] Write Unit Test cases for testing and check the test cases to ensure all possible scenarios are covered.
 - [ ] Perform testing and fix defects if any.
 - [ ] Run cpplint and cppcheck as part of Sprint 2.
 - [ ] Run Valgrind to detect memory leaks. Fix all detected memory leaks.

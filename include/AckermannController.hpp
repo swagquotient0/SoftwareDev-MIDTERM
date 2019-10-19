@@ -98,13 +98,13 @@ class AckermannController {
    * @param Current heading and wheel base distance
    * @return Computed Steering angle
    */
-  double computeSteering(std::vector<double> newD, int newTheta);
+  double computeSteering(std::vector<double> newD, double newTheta);
   /**
    * @brief Method to compute the wheel drive velocities
    * @param Current heading calculated
    * @return Computed vector of the wheel velocities
    */
-  std::vector<double> driveVelocities(double reqV,double reqTheta);
+  std::vector<double> driveVelocities(double reqV, double reqTheta);
 };
 
 #endif /* INCLUDE_ACKERMANNCONTROLLER_HPP_ */

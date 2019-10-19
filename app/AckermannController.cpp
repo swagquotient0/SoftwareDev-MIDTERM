@@ -44,7 +44,7 @@ void AckermannController::setL(double newL) {
 
 double AckermannController::computeLH() {
   double vel, lH;
-  int vmin = 7, vmax = 21;
+  int vmin = 6.94, vmax = 20.83;
 
   vel = AckermannController::getV();
   if (vel < vmin) {
@@ -67,7 +67,7 @@ std::vector<double> AckermannController::controlConstants() {
 }
 
 double AckermannController::computeSteering(std::vector<double> newD,
-                                            int newTheta) {
+                                            double newTheta) {
   std::ofstream myfile;
   myfile.open ("Output.txt");
   std::vector<double> k, d;
@@ -79,7 +79,6 @@ double AckermannController::computeSteering(std::vector<double> newD,
 
   thetaE = th-newTheta;
   thetaIncr = (double)(fabs(thetaE/10));
-
   thetaD = th+thetaIncr;
 
   xD = d[0]+lH*cos(thetaD);

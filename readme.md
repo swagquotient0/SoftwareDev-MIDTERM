@@ -27,9 +27,11 @@ In this project, we have implemented the Steering Controller for the Ackermann k
 
 The following assumptions are made while developing this project :-
  1. All vehicle parameters are known.
- 2. The current position and orientation of the vehicle can be calculated at any time through sensor feedback. 
+ 2. The current position and orientation of the vehicle can be calculated at any time by assuming a sensor feedback system. 
  3. Desired heading and velocity are continuously given to the system as input.
  4. Friction, Wheel slippage and actuator saturation is minimal.
+ 5. The initial velocity cannot be zero i.e v>0.
+ 6. The maximum steering angle is 45 degrees.
 
 ## Agile Iterative Process (AIP)
 This project was completed using AIP with the involvement of 3 programmers using Pair-programming in turns. The detailed Product Backlog, Iteration Backlogs and Work Log are mentioned in the link given below : 
@@ -50,7 +52,7 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
 
 <p align="center">
   <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/blob/master/Images/Ackermann.-Steering-1.png">
-  <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/master/Ackermann.-Steering-2.png">
+  <img width="250" height="250" src="https://github.com/Gautam-Balachandran/SoftwareDev-MIDTERM/blob/master/Ackermann.-Steering-2.png">
 </p>
 
 <p align="center">
@@ -61,7 +63,7 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
 - [x] Create UML Class and Activity diagram.
 - [x] Create Google docs for meeting reflections. 
 - [x] Create code stubs based on the UML class diagram.
-- [ ] Develop the code for the project while following C++11 coding guidelines.
+- [x] Develop the code for the project while following C++11 coding guidelines.
 - [ ] Check for design issues in the code
 - [ ] Update UML diagrams with changes in implementation.
 - [ ] Write Unit Test cases for testing and check the test cases to ensure all possible scenarios are covered.
@@ -70,6 +72,9 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
 - [ ] Run Valgrind to detect memory leaks. Fix all detected memory leaks.
 - [ ] Generate Doxygen documentation in the docs folder.
 - [ ] Make sure that the repository is updated with all delivarables as mentioned in the proposal.
+
+## Discovered bugs in the code
+- After attaining stability, the orientation error fluctuates between threshold values.
 
 ## Standard install via command-line
 ```

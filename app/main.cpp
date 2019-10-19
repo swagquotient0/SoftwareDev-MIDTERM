@@ -22,11 +22,11 @@ int main() {
 
   steeringAng = ackermann.computeSteering(requiredD, requiredTheta);
 
-//  driveWheelVel = ackermann.driveVelocities(requiredVel, requiredTheta);
+  driveWheelVel = ackermann.driveVelocities(requiredVel, requiredTheta);
 
-//  std::cout << "Current steering angle : " << steeringAng << std::endl;
-//  std::cout << "Required Velocity : " << requiredVel << std::endl;
-//  std::cout << "Drive Wheel Velocity 1 : " << driveWheelVel[0] << std::endl;
-//  std::cout << "Drive Wheel Velocity 2 : " << driveWheelVel[1] << std::endl;
+  std::cout << "Current steering angle : " << steeringAng << std::endl;
+  std::cout << "Required Velocity : " << requiredVel << std::endl;
+  std::cout << "Drive Wheel Velocity 1 : " << driveWheelVel[0] << std::endl;
+  std::cout << "Drive Wheel Velocity 2 : " << driveWheelVel[1] << std::endl;
   return 0;
 }

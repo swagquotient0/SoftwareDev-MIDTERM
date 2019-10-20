@@ -1,34 +1,25 @@
-// Ackermann Steering Control.cpp : Defines the entry point for the application.
 /*
- * AckermannController.cpp
- *
- * Created on : Oct 16, 2019
- * Author : Mushty Sri Sai Kaushik
- */
-
-/**
- * @Author Mushty Sri Sai Kaushik
  * @file AckermannController.cpp
+ * @Author Mushty Sri Sai Kaushik
+ * Created on 15 October 2019
  * @brief Ackermann Controller class implementation
- *
  */
 
-/*Common Development and Distribution License 1.0
-Copyright 2019 Gautam Balachandran, Sri Sai Kaushik, Sri Manika Makam
+/*
+ The MIT License
+ Copyright 2019 Gautam Balachandran, Sri Sai Kaushik, Sri Manika Makam
 
-COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN AS IS BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING,
-WITHOUT LIMITATION, WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR 
-NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED SOFTWARE IS WITH YOU. SHOULD ANY COVERED SOFTWARE PROVE
-DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED
-HEREUNDER EXCEPT UNDER THIS DISCLAIMER.*/
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #include "AckermannController.hpp"
-#include<fstream>
 
 /**
  * @brief Getter method for the heading vector
  * @param  none
- * @return The heading vector containing the x and y positions of the heading.
+ * @return The heading vector containing the x and y coordinates of the heading
  */
 std::vector<double> AckermannController::getD() {
   return AckermannController::d;
@@ -74,32 +65,32 @@ void AckermannController::setV(double newV) {
   AckermannController::v = newV;
 }
 /**
- * @brief Getter method for the wheel base
+ * @brief Getter method for the wheel base distance
  * @param  none
  * @return The wheel base distance
  */
 double AckermannController::getL() {
   return AckermannController::l;
 }
- /**
-  * @brief Setter method for the wheel base distance
-  * @param  New wheel base distance
-  * @return none
-  */
+/**
+ * @brief Setter method for the wheel base distance
+ * @param  New wheel base distance
+ * @return none
+ */
 void AckermannController::setL(double newL) {
   AckermannController::l = newL;
 }
 /**
- * @brief Method to compute the look-ahead for the current velocity
- * @param Current Velocity of the vehicle
- * @return Computed Look-Ahead distance
+ * @brief Method to compute the look-ahead distance which depends on the current velocity
+ * @param
+ * @return Computed look-ahead distance
  */
 double AckermannController::computeLH() {
   double vel, lH;
-  ///give values for vmin and vmax 
+  /// Set values for vmin and vmax in metres/second
   int vmin = 6.94, vmax = 20.83;
-  ///calculate value of Lh based on the parameters
   vel = AckermannController::getV();
+  /// Calculating value of look-ahead distance in metres
   if (vel < vmin) {
     lH = 10.41;
   } else if (vel >= vmin and vel <= vmax) {
@@ -111,13 +102,13 @@ double AckermannController::computeLH() {
 }
 /**
  * @brief Method to compute the controller gains
- * @param Current Velocity of the vehicle
- * @return Vector of computed gains
+ * @param none
+ * @return Vector of computed gains, kp and kd
  */
 std::vector<double> AckermannController::controlConstants() {
   double vel, kP, kD;
   vel = AckermannController::getV();
-  ///Write equations for kP and kD
+  /// Calculating values of kP and kD, which are dependent on velocity
   kP = pow((0.3383 / vel), 2);
   kD = (0.4 / vel);
   std::vector<double> k { kP, kD };
@@ -125,118 +116,127 @@ std::vector<double> AckermannController::controlConstants() {
 }
 /**
  * @brief Method to compute the steering angle
- * @param Current heading and wheel base distance
- * @return Computed Steering angle
+ * @param Required heading and required orientation
+ * @return Computed steering angle
  */
 double AckermannController::computeSteering(std::vector<double> newD,
                                             double newTheta) {
   std::ofstream myfile;
-  myfile.open ("Output.txt");
+  /// Creating a file to write the outputs
+  myfile.open("Output.txt");
   std::vector<double> k, d;
-  double lH, th, dE, xD, yD,thetaD,thetaE, k1, a1, a2, inner, phi, thetaIncr;
+  double lH, th, dE, xD, yD, thetaD, thetaE, k1, a1, a2, inner, phi, thetaIncr;
   k = AckermannController::controlConstants();
   lH = computeLH();
   d = AckermannController::getD();
   th = AckermannController::getTheta();
-  ///Update value of thetaD with thetaIncr
-  thetaE = th-newTheta;
-  thetaIncr = (double)(fabs(thetaE/10));
-  thetaD = th+thetaIncr;
-  ///Calculate values of xD and yD 
-  xD = d[0]+lH*cos(thetaD);
-  yD = d[1]+lH*sin(thetaD);
-  dE = (yD - newD[1]) * cos(newTheta)-(xD- newD[0]) * sin(newTheta);
-  ///print out values of Position and orientation error
-  std::cout<<"Position Error : "<<dE<<std::endl;
-  std::cout<<"Orientation Error : "<<thetaE<<std::endl;
-  ///Create loop with a break value of dE between 10 and -10
-  while(-10>dE or dE>10){
-    myfile<<"Current Orientation : "<<th<<"\n";
-    myfile<<"Position Error : "<<dE<<"\n";
-    myfile<<"Orientation Error : "<<thetaE<<"\n";
-  ///Calculate value of phi
+  /// Orientation error (thetaE) is the difference between current (th) and required orientations (newTheta)
+  thetaE = th - newTheta;
+  thetaIncr = (double) (fabs(thetaE / 10));
+  /// We calculate orientations of the trajectory path in increments (thetaIncr) to obtain the required orientation (newTheta)
+  /// Calculation of orientation (thetaD) of the trajectory at a point.
+  thetaD = th + thetaIncr;
+  /// Calculating the coordinates of the trajectory at a point
+  xD = d[0] + lH * cos(thetaD);
+  yD = d[1] + lH * sin(thetaD);
+  /// Calculating position error, which is distance between the trajectory path at a point and desired trajectory (newD)
+  dE = (yD - newD[1]) * cos(newTheta) - (xD - newD[0]) * sin(newTheta);
+  /// Loop will run till the position error (dE) is between -10 and 10
+  while (-10 > dE or dE > 10) {
+    /// Printing position and orientation errors in the file for every iteration
+    myfile << "Position Error : " << dE << "\n";
+    myfile << "Orientation Error : " << thetaE << "\n";
+    /// Maximum steering angle constraint is 45 degrees
     k1 = (tan(45.0 * M_PI / 180.0) / l);
-    a1 = 1-exp((-k1*(sin(thetaE)*(k[1]*tan(thetaE)+k[0]*dE)))/(sin(thetaE)+lH*(pow(cos(thetaE),4))*(k[1]*tan(thetaE) + k[0] * dE)));
-    a2 = 1+exp((-k1*(sin(thetaE)*(k[1]*tan(thetaE)+k[0]*dE)))/(sin(thetaE)+lH*(pow(cos(thetaE),4))*(k[1]*tan(thetaE)+k[0]*dE)));
+    /// Calculating steering angle (phi) using non-linear control law
+    a1 = 1
+        - exp(
+            (-k1 * (sin(thetaE) * (k[1] * tan(thetaE) + k[0] * dE)))
+                / (sin(thetaE)
+                    + lH * (pow(cos(thetaE), 4))
+                        * (k[1] * tan(thetaE) + k[0] * dE)));
+    a2 = 1
+        + exp(
+            (-k1 * (sin(thetaE) * (k[1] * tan(thetaE) + k[0] * dE)))
+                / (sin(thetaE)
+                    + lH * (pow(cos(thetaE), 4))
+                        * (k[1] * tan(thetaE) + k[0] * dE)));
     inner = (double) (-k1 * l * pow(cos(thetaE), 3) * (a1 / a2));
     phi = atan(inner) * 180 / M_PI;
-
-    myfile<<"PHI : "<<phi<<"\n";
-    std::cout<<"PHI : "<<phi<<std::endl;
-
-    // Update Sequence
+    /// Printing steering angle for every iteration
+    myfile << "PHI : " << phi << "\n";
+    /// Update values of th, d, xD, yD
     th = thetaD;
     d[0] = xD;
     d[1] = yD;
-    xD += lH*cos(th);
-    yD += lH*sin(th);
-
-    if(th<newTheta){
-      thetaD =th+thetaIncr;
+    xD += lH * cos(th);
+    yD += lH * sin(th);
+    /// Updation of thetaD varies depending on whether current orientation (th) is greater or lesser than required orientation (newTheta)
+    if (th < newTheta) {
+      thetaD = th + thetaIncr;
+    } else {
+      thetaD = th - thetaIncr;
     }
-    else{
-      thetaD =th-thetaIncr;
+    dE = -(xD - newD[0]) * sin(newTheta) + (yD - newD[1]) * cos(newTheta);
+    if (((newTheta - 3) >= th or th >= (newTheta + 3))) {
+      thetaE = thetaD - newTheta;
     }
-
-    dE = -(xD- newD[0]) * sin(newTheta) + (yD - newD[1]) * cos(newTheta);
-
-    if(((newTheta-3)>=th or th>=(newTheta+3))){
-      thetaE = thetaD-newTheta;
-    }
-   
-   ///Ouptu final values of position and orientation errors
-   std::cout<<"Position Error : "<<dE<<std::endl;
-    std::cout<<"Orientation Error : "<<thetaE<<std::endl;
-    std::cout<<"======================================================================="<<std::endl;
-    myfile<<"============================================================================= \n";
+    myfile
+        << "============================================================================= \n";
   }
-  ///output values of the parameters on the text file
-  myfile<<"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% \n";
-  myfile<<"DESIRED POSITION : "<<newD[0]<<","<<newD[1]<<"\n";
-  myfile<<"FINAL POSITION ERROR: "<<dE<<"\n";
-  myfile<<"FINAL POSITION : "<<xD<<","<<yD<<"\n\n";
-  myfile<<"DESIRED ORIENTATION : "<<newTheta<<"\n";
-  myfile<<"FINAL ORIENTATION ERROR: "<<thetaE<<"\n";
-  myfile<<"FINAL ORIENTATION : "<<thetaD<<"\n\n";
-  myfile<<"FINAL STEERING ANGLE : "<<phi<<"\n";
-
+  /// Print the outputs in the text file
+  myfile << "DESIRED POSITION : " << newD[0] << "," << newD[1] << "\n";
+  myfile << "FINAL POSITION ERROR: " << dE << "\n";
+  myfile << "FINAL POSITION : " << xD << "," << yD << "\n\n";
+  myfile << "DESIRED ORIENTATION : " << newTheta << "\n";
+  myfile << "FINAL ORIENTATION ERROR: " << thetaE << "\n";
+  myfile << "FINAL ORIENTATION : " << thetaD << "\n\n";
+  myfile << "FINAL STEERING ANGLE : " << phi << "\n";
   myfile.close();
+  /// Printing the outputs in console
+  std::cout << "DESIRED POSITION : " << newD[0] << "," << newD[1] << std::endl;
+  std::cout << "FINAL POSITION ERROR: " << dE << std::endl;
+  std::cout << "FINAL POSITION : " << xD << "," << yD << std::endl << std::endl;
+  std::cout << "DESIRED ORIENTATION : " << newTheta << std::endl;
+  std::cout << "FINAL ORIENTATION ERROR: " << thetaE << std::endl;
+  std::cout << "FINAL ORIENTATION : " << thetaD << std::endl;
+  std::cout << "FINAL STEERING ANGLE : " << phi << std::endl << std::endl;
   return phi;
-
 }
 /**
  * @brief Method to compute the wheel drive velocities
- * @param Current heading calculated
+ * @param Required velocity and required orientation
  * @return Computed vector of the wheel velocities
  */
-std::vector<double> AckermannController::driveVelocities(double reqV, double reqTheta) {
+std::vector<double> AckermannController::driveVelocities(double reqV,
+                                                         double reqTheta) {
   double l, wheelRadius, trackWidth, angularVelocity, turningRadius, ICRI,
       displacement1, rps1, driveVelocity1, ICRO, displacement2, rps2,
       driveVelocity2, dt;
   l = AckermannController::getL();
-  ///inititalize values of wheel radius, track width and dt
+  /// Initializing values of wheel radius and track width in metres
   wheelRadius = 0.3;
   trackWidth = 1;
+  /// Initializing time interval dt
   dt = 1.0;
-  ///Calculate values of Angular Velocity, turning radius
-  angularVelocity = (reqTheta*M_PI)/(180*dt);
-  turningRadius = reqV/angularVelocity;
+  /// Calculating Angular Velocity in radians/second
+  angularVelocity = (reqTheta * M_PI) / (180 * dt);
+  /// Calculating turning radius
+  turningRadius = reqV / angularVelocity;
   ///Calculate ICRI for the inner wheel
   ICRI = sqrt(pow(l, 2) + turningRadius - pow((trackWidth / 2), 2));
   displacement1 = ICRI * angularVelocity;
+  /// Rotations per second of the inner wheel
   rps1 = displacement1 / wheelRadius;
-  ///Calculate value of drive velocity 1
-  driveVelocity1 = rps1 * M_PI * 2 * wheelRadius ;
-  ///Calculate ICRO for the outer wheel
+  /// Calculate drive velocity of inner wheel in meters/second
+  driveVelocity1 = rps1 * M_PI * 2 * wheelRadius;
+  /// Calculate ICRO for the outer wheel
   ICRO = sqrt(pow(l, 2) + turningRadius + pow((trackWidth / 2), 2));
   displacement2 = ICRO * angularVelocity;
+  /// Rotations per second of the outer wheel
   rps2 = displacement2 / wheelRadius;
-  ///Calculate value of drive velocity 2
+  /// Calculate drive velocity of outer wheel in meters/second
   driveVelocity2 = rps2 * M_PI * 2 * wheelRadius;
-  ///output value of rps1 and rps2
-  std::cout<<"RPS1 : "<<rps1<<std::endl;
-  std::cout<<"RPS2 : "<<rps2<<std::endl;
-
   std::vector<double> driveVel { driveVelocity1, driveVelocity2 };
   return driveVel;
 }

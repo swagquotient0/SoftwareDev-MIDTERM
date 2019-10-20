@@ -1,50 +1,76 @@
 /*
- * main file
- *
- *  Created on: Oct 19, 2019
- *      Author: Mushty Sri Sai Kaushik
- *  Copyright : This code is developed for ENPM808X. Do not copy without citation.
+ * @file main.cpp
+ * @Author: Gautam Balachandran
+ * Created on 11 October 2019
+ * @brief Main file for the application
+ * Copyright : This code is developed for ENPM808X. Do not copy without citation.
  */
 
-/*Common Development and Distribution License 1.0
-Copyright 2019 Gautam Balachandran, Sri Sai Kaushik, Sri Manika Makam
+/*
+ The MIT License
+ Copyright 2019 Gautam Balachandran, Sri Sai Kaushik, Sri Manika Makam
 
-COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN AS IS BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING,
-WITHOUT LIMITATION, WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR 
-NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED SOFTWARE IS WITH YOU. SHOULD ANY COVERED SOFTWARE PROVE
-DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED
-HEREUNDER EXCEPT UNDER THIS DISCLAIMER.*/
-  
-#include <iostream>
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 #include <AckermannController.hpp>
 
 int main() {
+  double requiredVel, currentVel, requiredTheta, currentTheta, wheelBase;
+  int input = 0;
+  std::vector<double> requiredD, driveWheelVel, currentD;
+  std::cout
+      << "Enter the required final velocity of the vehicle in meters/second : "
+      << std::endl;
+  /// Required velocity to be achieved is given as user input
+  std::cin >> requiredVel;
+  std::cout
+      << "Enter the desired final position (x and y coordinates) of the vehicle : "
+      << std::endl;
+  /// Desired final position of the vehicle is given as vector of x and y coordinates
+  for (int i = 0; i < 2; i++) {
+    std::cin >> input;
+    requiredD.push_back(input);
 
-  
-  double requiredVel = 30;  // Velocity to be achieved
-  std::vector<double> requiredD { 50, 100 };
-  int requiredTheta = 80;  // Heading angle to be achieved
-  ///Assign the x,y values for currentD
-  std::vector<double> currentD { 15.0, 5.0 };
-  std::vector<double> driveWheelVel;
-  double steeringAng;
+  }
+  std::cout << "Enter the final orientation of the vehicle in degrees : "
+            << std::endl;
+  /// Final orientation to be achieved by the vehicle is given as user input
+  std::cin >> requiredTheta;
+  std::cout << "Enter the initial orientation of the vehicle in degrees : "
+            << std::endl;
+  /// Initial orientation of the vehicle is given as user input
+  std::cin >> currentTheta;
+  std::cout << "Enter the initial position of the vehicle: " << std::endl;
+  /// Initial position of the vehicle is given as vector of x and y coordinates
+  for (int i = 0; i < 2; i++) {
+    std::cin >> input;
+    currentD.push_back(input);
+
+  }
+  std::cout << "Enter the current velocity of the vehicle in meters/second : "
+            << std::endl;
+  /// Current velocity of the vehicle is given as user input
+  std::cin >> currentVel;
+  std::cout << "Enter the wheel base of the vehicle in meters : " << std::endl;
+  /// Wheel base of the vehicle is given as user input
+  std::cin >> wheelBase;
 
   AckermannController ackermann;
-  ackermann.setL(2.4);  /// Wheel Base
-  ackermann.setV(28);  ///  current velocity
-  ackermann.setTheta(30);  /// Current Orientation
-  ackermann.setD(currentD);  /// Current Position
-  ///Output values of Required and Current Orientation
-  
-  std::cout << "Required Orientation : " << requiredTheta << std::endl;
-  std::cout << "Current Orientation : " << ackermann.getTheta() << std::endl;
-  
-  steeringAng = ackermann.computeSteering(requiredD, requiredTheta);
-  ///Give parameters for driveWheelVel
+  ackermann.setL(wheelBase);
+  ackermann.setV(currentVel);
+  ackermann.setTheta(currentTheta);
+  ackermann.setD(currentD);
+  ackermann.computeSteering(requiredD, requiredTheta);
   driveWheelVel = ackermann.driveVelocities(requiredVel, requiredTheta);
-  ///Output values of drive velocities and required velocities
-  std::cout << "Required Velocity : " << requiredVel << std::endl;
-  std::cout << "Drive Wheel Velocity 1 : " << driveWheelVel[0] << std::endl;
-  std::cout << "Drive Wheel Velocity 2 : " << driveWheelVel[1] << std::endl;
+  /// Output the values of two drive wheel velocities
+  std::cout << "Required Velocity to be achieved by the vehicle: "
+            << requiredVel << std::endl;
+  std::cout << "Drive Wheel Velocity of inner wheel : " << driveWheelVel[0]
+            << std::endl;
+  std::cout << "Drive Wheel Velocity of outer wheel : " << driveWheelVel[1]
+            << std::endl;
   return 0;
 }

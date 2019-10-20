@@ -1,18 +1,18 @@
 /*
- * AckermannController.hpp
- *
- *  Created on: Oct 11, 2019
- *      Author: Gautam
+ * @file AckermannController.hpp
+ * @Author Gautam Balachandran
+ * Created on 11 October 2019
+ * @brief Ackermann Controller header file
  */
 
-/*Common Development and Distribution License 1.0
-Copyright 2019 Gautam Balachandran, Sri Sai Kaushik, Sri Manika Makam
+/*
+ The MIT License
+ Copyright 2019 Gautam Balachandran, Sri Sai Kaushik, Sri Manika Makam
 
-COVERED SOFTWARE IS PROVIDED UNDER THIS LICENSE ON AN AS IS BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING,
-WITHOUT LIMITATION, WARRANTIES THAT THE COVERED SOFTWARE IS FREE OF DEFECTS, MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR 
-NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE COVERED SOFTWARE IS WITH YOU. SHOULD ANY COVERED SOFTWARE PROVE
-DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL DEVELOPER OR ANY OTHER CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY COVERED SOFTWARE IS AUTHORIZED
-HEREUNDER EXCEPT UNDER THIS DISCLAIMER.*/
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
 
 #ifndef INCLUDE_ACKERMANNCONTROLLER_HPP_
 #define INCLUDE_ACKERMANNCONTROLLER_HPP_
@@ -23,21 +23,14 @@ HEREUNDER EXCEPT UNDER THIS DISCLAIMER.*/
 #include<math.h>
 #include <fstream>
 
-/**
- * @Author Gautam Balachandran
- * @file AckermannController.hpp
- * @brief Ackermann Controller header file
- *
- */
-
 class AckermannController {
  private:
   /**
-   * @brief Variable that define the heading.
+   * @brief Variable that defines the heading.
    */
   std::vector<double> d;
   /**
-   * @brief Variables that define the orientation, velocity and the wheel base distance
+   * @brief Variables that define the orientation, velocity and the wheel base distance respectively
    */
   double theta, v, l;
 
@@ -45,7 +38,7 @@ class AckermannController {
   /**
    * @brief Getter method for the heading vector
    * @param  none
-   * @return The heading vector containing the x and y positions of the heading.
+   * @return The heading vector containing the x and y coordinates of the heading
    */
   std::vector<double> getD();
   /**
@@ -79,7 +72,7 @@ class AckermannController {
    */
   void setV(double newV);
   /**
-   * @brief Getter method for the wheel base
+   * @brief Getter method for the wheel base distance
    * @param  none
    * @return The wheel base distance
    */
@@ -91,26 +84,26 @@ class AckermannController {
    */
   void setL(double newL);
   /**
-   * @brief Method to compute the look-ahead for the current velocity
-   * @param Current Velocity of the vehicle
-   * @return Computed Look-Ahead distance
+   * @brief Method to compute the look-ahead distance which depends on the current velocity
+   * @param
+   * @return Computed look-ahead distance
    */
   double computeLH();
   /**
    * @brief Method to compute the controller gains
-   * @param Current Velocity of the vehicle
-   * @return Vector of computed gains
+   * @param none
+   * @return Vector of computed gains, kp and kd
    */
   std::vector<double> controlConstants();
   /**
    * @brief Method to compute the steering angle
-   * @param Current heading and wheel base distance
-   * @return Computed Steering angle
+   * @param Required heading and required orientation
+   * @return Computed steering angle
    */
   double computeSteering(std::vector<double> newD, double newTheta);
   /**
    * @brief Method to compute the wheel drive velocities
-   * @param Current heading calculated
+   * @param Required velocity and required orientation
    * @return Computed vector of the wheel velocities
    */
   std::vector<double> driveVelocities(double reqV, double reqTheta);

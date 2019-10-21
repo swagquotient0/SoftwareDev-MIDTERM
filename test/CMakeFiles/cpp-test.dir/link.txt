@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++14  -Wall -Wextra -Wpedantic -g -g   CMakeFiles/cpp-test.dir/main.cpp.o CMakeFiles/cpp-test.dir/AckermannControllerTest.cpp.o CMakeFiles/cpp-test.dir/__/app/AckermannController.cpp.o  -o cpp-test -rdynamic ../vendor/googletest/googletest/libgtest.a -lpthread 

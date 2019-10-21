@@ -1,0 +1,40 @@
+Current Orientation : 15
+Position Error : 41.8934
+Orientation Error : -60
+PHI : 0.0266738
+============================================================================= 
+Current Orientation : 21
+Position Error : -85.3075
+Orientation Error : -48
+PHI : 0.0817547
+============================================================================= 
+Current Orientation : 27
+Position Error : -61.2995
+Orientation Error : -42
+PHI : 0.0815238
+============================================================================= 
+Current Orientation : 33
+Position Error : -32.6582
+Orientation Error : -36
+PHI : 0.0711797
+============================================================================= 
+Current Orientation : 39
+Position Error : -57.1889
+Orientation Error : -30
+PHI : 0.0812594
+============================================================================= 
+Current Orientation : 45
+Position Error : -26.3129
+Orientation Error : -24
+PHI : 0.0600553
+============================================================================= 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+DESIRED POSITION : 100,100
+FINAL POSITION ERROR: 1.98645
+FINAL POSITION : 55.4548,120.895
+
+DESIRED ORIENTATION : 75
+FINAL ORIENTATION ERROR: -18
+FINAL ORIENTATION : 57
+
+FINAL STEERING ANGLE : 0.0600553

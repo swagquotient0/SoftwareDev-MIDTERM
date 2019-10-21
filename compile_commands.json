@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app",
+  "command": "/usr/bin/c++ -std=c++14   -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/include\"  -Wall -Wextra -Wpedantic -g -g   -std=gnu++14 -o CMakeFiles/shell-app.dir/main.cpp.o -c \"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/main.cpp\"",
+  "file": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/main.cpp"
+},
+{
+  "directory": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app",
+  "command": "/usr/bin/c++ -std=c++14   -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/include\"  -Wall -Wextra -Wpedantic -g -g   -std=gnu++14 -o CMakeFiles/shell-app.dir/AckermannController.cpp.o -c \"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/AckermannController.cpp\"",
+  "file": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/AckermannController.cpp"
+},
+{
+  "directory": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test",
+  "command": "/usr/bin/c++ -std=c++14   -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test/../vendor/googletest/googletest/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/include\"  -Wall -Wextra -Wpedantic -g -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/main.cpp.o -c \"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test/main.cpp\"",
+  "file": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test/main.cpp"
+},
+{
+  "directory": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test",
+  "command": "/usr/bin/c++ -std=c++14   -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test/../vendor/googletest/googletest/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/include\"  -Wall -Wextra -Wpedantic -g -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/AckermannControllerTest.cpp.o -c \"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test/AckermannControllerTest.cpp\"",
+  "file": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test/AckermannControllerTest.cpp"
+},
+{
+  "directory": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test",
+  "command": "/usr/bin/c++ -std=c++14   -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/test/../vendor/googletest/googletest/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/include\"  -Wall -Wextra -Wpedantic -g -g   -std=gnu++14 -o CMakeFiles/cpp-test.dir/__/app/AckermannController.cpp.o -c \"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/AckermannController.cpp\"",
+  "file": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/AckermannController.cpp"
+},
+{
+  "directory": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest",
+  "command": "/usr/bin/c++ -std=c++14   -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest\"  -Wall -Wextra -Wpedantic -g -g   -Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c \"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/src/gtest-all.cc\"",
+  "file": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest",
+  "command": "/usr/bin/c++ -std=c++14   -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/include\" -I\"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest\"  -Wall -Wextra -Wpedantic -g -g   -Wall -Wextra -Wpedantic -g -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++14 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c \"/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/src/gtest_main.cc\"",
+  "file": "/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/vendor/googletest/googletest/src/gtest_main.cc"
+}
+]

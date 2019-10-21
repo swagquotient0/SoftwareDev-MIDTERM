@@ -1,0 +1,1 @@
+/usr/bin/c++ -std=c++14  -Wall -Wextra -Wpedantic -g -g   CMakeFiles/shell-app.dir/main.cpp.o CMakeFiles/shell-app.dir/AckermannController.cpp.o  -o shell-app -rdynamic 

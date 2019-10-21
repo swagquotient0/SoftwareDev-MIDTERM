@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/AckermannController.cpp
+AckermannController.hpp
+/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/AckermannController.hpp
+
+/media/gautam/Secondary Drive/Software Dev/Midterm/SoftwareDev-MIDTERM/app/main.cpp
+AckermannController.hpp
+-
+
+include/AckermannController.hpp
+iostream
+-
+vector
+-
+cmath
+-
+math.h
+-
+fstream
+-
+

@@ -1,0 +1,265 @@
+\hypertarget{classAckermannController}{}\section{Ackermann\+Controller Class Reference}
+\label{classAckermannController}\index{Ackermann\+Controller@{Ackermann\+Controller}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ double $>$ \hyperlink{classAckermannController_a1df741d625ae47d40ec4bff179061488}{getD} ()
+\begin{DoxyCompactList}\small\item\em Getter method for the heading vector. \end{DoxyCompactList}\item 
+void \hyperlink{classAckermannController_a8e30ccd76d72b7cb861fe4b05427bc8e}{setD} (std\+::vector$<$ double $>$ newD)
+\begin{DoxyCompactList}\small\item\em Setter method for the heading vector. \end{DoxyCompactList}\item 
+double \hyperlink{classAckermannController_a3a6fd7f667287ab11d5f15b2d299fcd7}{get\+Theta} ()
+\begin{DoxyCompactList}\small\item\em Getter method for the orientation. \end{DoxyCompactList}\item 
+void \hyperlink{classAckermannController_a16295a9391eefa1c6bbf265258b9a7b9}{set\+Theta} (double new\+Theta)
+\begin{DoxyCompactList}\small\item\em Setter method for the orientation. \end{DoxyCompactList}\item 
+double \hyperlink{classAckermannController_a9c373294e90f14555ebb44a9375b3531}{getV} ()
+\begin{DoxyCompactList}\small\item\em Getter method for the velocity. \end{DoxyCompactList}\item 
+void \hyperlink{classAckermannController_ae25138b1ea820a8122c5eaab2c4dde27}{setV} (double newV)
+\begin{DoxyCompactList}\small\item\em Setter method for the velocity. \end{DoxyCompactList}\item 
+double \hyperlink{classAckermannController_aed1eecb5f719ec0a7f6f026c761f9618}{getL} ()
+\begin{DoxyCompactList}\small\item\em Getter method for the wheel base distance. \end{DoxyCompactList}\item 
+void \hyperlink{classAckermannController_aa783c1211c2a3f0ad8724b6fc0b044b5}{setL} (double newL)
+\begin{DoxyCompactList}\small\item\em Setter method for the wheel base distance. \end{DoxyCompactList}\item 
+double \hyperlink{classAckermannController_a01af0ebf2941568250268bce6f2e29be}{compute\+LH} ()
+\begin{DoxyCompactList}\small\item\em Method to compute the look-\/ahead distance which depends on the current velocity. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classAckermannController_a31a2ce94c8043f66e6d6445f591c83ae}{control\+Constants} ()
+\begin{DoxyCompactList}\small\item\em Method to compute the controller gains. \end{DoxyCompactList}\item 
+double \hyperlink{classAckermannController_a587d56dc9b18e806361ebbd0c3556998}{compute\+Steering} (std\+::vector$<$ double $>$ newD, double new\+Theta)
+\begin{DoxyCompactList}\small\item\em Method to compute the steering angle. \end{DoxyCompactList}\item 
+std\+::vector$<$ double $>$ \hyperlink{classAckermannController_a02b041637eacfb1df1770e45d00297bf}{drive\+Velocities} (double reqV, double req\+Theta)
+\begin{DoxyCompactList}\small\item\em Method to compute the wheel drive velocities. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!compute\+LH@{compute\+LH}}
+\index{compute\+LH@{compute\+LH}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{compute\+L\+H()}{computeLH()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ackermann\+Controller\+::compute\+LH (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a01af0ebf2941568250268bce6f2e29be}{}\label{classAckermannController_a01af0ebf2941568250268bce6f2e29be}
+
+
+Method to compute the look-\/ahead distance which depends on the current velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!compute\+Steering@{compute\+Steering}}
+\index{compute\+Steering@{compute\+Steering}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{compute\+Steering(std\+::vector$<$ double $>$ new\+D, double new\+Theta)}{computeSteering(std::vector< double > newD, double newTheta)}}]{\setlength{\rightskip}{0pt plus 5cm}double Ackermann\+Controller\+::compute\+Steering (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{newD, }
+\item[{double}]{new\+Theta}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a587d56dc9b18e806361ebbd0c3556998}{}\label{classAckermannController_a587d56dc9b18e806361ebbd0c3556998}
+
+
+Method to compute the steering angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Required} & heading and required orientation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Computed steering angle 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!control\+Constants@{control\+Constants}}
+\index{control\+Constants@{control\+Constants}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{control\+Constants()}{controlConstants()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ Ackermann\+Controller\+::control\+Constants (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a31a2ce94c8043f66e6d6445f591c83ae}{}\label{classAckermannController_a31a2ce94c8043f66e6d6445f591c83ae}
+
+
+Method to compute the controller gains. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of computed gains, kp and kd 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!drive\+Velocities@{drive\+Velocities}}
+\index{drive\+Velocities@{drive\+Velocities}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{drive\+Velocities(double req\+V, double req\+Theta)}{driveVelocities(double reqV, double reqTheta)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ Ackermann\+Controller\+::drive\+Velocities (
+\begin{DoxyParamCaption}
+\item[{double}]{reqV, }
+\item[{double}]{req\+Theta}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a02b041637eacfb1df1770e45d00297bf}{}\label{classAckermannController_a02b041637eacfb1df1770e45d00297bf}
+
+
+Method to compute the wheel drive velocities. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Required} & velocity and required orientation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Computed vector of the wheel velocities 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!getD@{getD}}
+\index{getD@{getD}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{get\+D()}{getD()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ double $>$ Ackermann\+Controller\+::getD (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a1df741d625ae47d40ec4bff179061488}{}\label{classAckermannController_a1df741d625ae47d40ec4bff179061488}
+
+
+Getter method for the heading vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The heading vector containing the x and y coordinates of the heading 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!getL@{getL}}
+\index{getL@{getL}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{get\+L()}{getL()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ackermann\+Controller\+::getL (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_aed1eecb5f719ec0a7f6f026c761f9618}{}\label{classAckermannController_aed1eecb5f719ec0a7f6f026c761f9618}
+
+
+Getter method for the wheel base distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The wheel base distance 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!get\+Theta@{get\+Theta}}
+\index{get\+Theta@{get\+Theta}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{get\+Theta()}{getTheta()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ackermann\+Controller\+::get\+Theta (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a3a6fd7f667287ab11d5f15b2d299fcd7}{}\label{classAckermannController_a3a6fd7f667287ab11d5f15b2d299fcd7}
+
+
+Getter method for the orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The orientation of the vehicle 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!getV@{getV}}
+\index{getV@{getV}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{get\+V()}{getV()}}]{\setlength{\rightskip}{0pt plus 5cm}double Ackermann\+Controller\+::getV (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a9c373294e90f14555ebb44a9375b3531}{}\label{classAckermannController_a9c373294e90f14555ebb44a9375b3531}
+
+
+Getter method for the velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current velocity of the vehicle 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!setD@{setD}}
+\index{setD@{setD}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{set\+D(std\+::vector$<$ double $>$ new\+D)}{setD(std::vector< double > newD)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ackermann\+Controller\+::setD (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ double $>$}]{newD}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a8e30ccd76d72b7cb861fe4b05427bc8e}{}\label{classAckermannController_a8e30ccd76d72b7cb861fe4b05427bc8e}
+
+
+Setter method for the heading vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New} & heading vector to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!setL@{setL}}
+\index{setL@{setL}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{set\+L(double new\+L)}{setL(double newL)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ackermann\+Controller\+::setL (
+\begin{DoxyParamCaption}
+\item[{double}]{newL}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_aa783c1211c2a3f0ad8724b6fc0b044b5}{}\label{classAckermannController_aa783c1211c2a3f0ad8724b6fc0b044b5}
+
+
+Setter method for the wheel base distance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New} & wheel base distance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!set\+Theta@{set\+Theta}}
+\index{set\+Theta@{set\+Theta}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{set\+Theta(double new\+Theta)}{setTheta(double newTheta)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ackermann\+Controller\+::set\+Theta (
+\begin{DoxyParamCaption}
+\item[{double}]{new\+Theta}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_a16295a9391eefa1c6bbf265258b9a7b9}{}\label{classAckermannController_a16295a9391eefa1c6bbf265258b9a7b9}
+
+
+Setter method for the orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New} & orientation to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Ackermann\+Controller@{Ackermann\+Controller}!setV@{setV}}
+\index{setV@{setV}!Ackermann\+Controller@{Ackermann\+Controller}}
+\subsubsection[{\texorpdfstring{set\+V(double new\+V)}{setV(double newV)}}]{\setlength{\rightskip}{0pt plus 5cm}void Ackermann\+Controller\+::setV (
+\begin{DoxyParamCaption}
+\item[{double}]{newV}
+\end{DoxyParamCaption}
+)}\hypertarget{classAckermannController_ae25138b1ea820a8122c5eaab2c4dde27}{}\label{classAckermannController_ae25138b1ea820a8122c5eaab2c4dde27}
+
+
+Setter method for the velocity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em New} & velocity to be set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Ackermann\+Controller.\+h\item 
+app/Ackermann\+Controller.\+cpp\end{DoxyCompactItemize}

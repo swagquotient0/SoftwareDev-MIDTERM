@@ -1,6 +1,6 @@
 # Ackermann Steering Control
-[![Build Status](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM.svg?branch=Iteration-2)](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM?branch=Iteration-2)
-[![Coverage Status](https://coveralls.io/repos/github/Gautam-Balachandran/SoftwareDev-MIDTERM/badge.svg?branch=Iteration-2)](https://coveralls.io/github/Gautam-Balachandran/SoftwareDev-MIDTERM?branch=Iteration-2)
+[![Build Status](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM.svg?branch=master)](https://travis-ci.org/Gautam-Balachandran/SoftwareDev-MIDTERM?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Gautam-Balachandran/SoftwareDev-MIDTERM/badge.svg?branch=master)](https://coveralls.io/github/Gautam-Balachandran/SoftwareDev-MIDTERM?branch=master)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ---
 

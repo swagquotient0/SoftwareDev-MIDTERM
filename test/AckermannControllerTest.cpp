@@ -14,31 +14,35 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#include <AckermannController.h>
 #include <gtest/gtest.h>
-#include "../include/AckermannController.hpp"
 
 /**
  * @brief Test case to check if the obtained steering angle is less than 45 degrees
  */
 TEST(AckermannControllerTest, phiTest) {
+  std::vector<double> currentD = { 10.0, 15.0 };
+  std::vector<double> requiredD = { 77.5, 17.2 };
   AckermannController AckermannTest;
-  AckermannTest.setL(2.4);  /// Wheel Base
-  AckermannTest.setV(45);  /// Current velocity
-  AckermannTest.setTheta(40);  /// Current Orientation
-  AckermannTest.setD( { 10.0, 15.0 });  /// Current Position
-  double val = AckermannTest.computeSteering( { 77.5, 17.2 }, 15.0);
+  AckermannTest.setL(2.4);  //  Wheel Base
+  AckermannTest.setV(45);  // Current velocity
+  AckermannTest.setTheta(40);  // Current Orientation
+  AckermannTest.setD(currentD);  // Current Position
+  double val = AckermannTest.computeSteering(requiredD, 15.0);
   EXPECT_LT(val, 45.0);
 }
 /**
  * @brief Test case to check if the obtained steering angle is of type double
  */
 TEST(AckermannControllerTest, phiTestType) {
+  std::vector<double> currentD = { 10.0, 15.0 };
+  std::vector<double> requiredD = { 77.5, 17.2 };
   AckermannController AckermannTest;
-  AckermannTest.setL(2.4);  /// Wheel Base
-  AckermannTest.setV(45);  /// Current velocity
-  AckermannTest.setTheta(40);  /// Current Orientation
-  AckermannTest.setD( { 10.0, 15.0 });  /// Current Position
-  double val = AckermannTest.computeSteering( { 77.5, 17.2 }, 15.0);
+  AckermannTest.setL(2.4);  // Wheel Base
+  AckermannTest.setV(45);  // Current velocity
+  AckermannTest.setTheta(40);  // Current Orientation
+  AckermannTest.setD(currentD);  // Current Position
+  double val = AckermannTest.computeSteering(requiredD, 15.0);
   EXPECT_EQ(typeid(val), typeid(double));
 }
 /**

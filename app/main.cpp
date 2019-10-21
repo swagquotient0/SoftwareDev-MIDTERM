@@ -15,7 +15,7 @@
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <AckermannController.hpp>
+#include <AckermannController.h>
 
 int main() {
   double requiredVel, currentVel, requiredTheta, currentTheta, wheelBase;
@@ -24,38 +24,36 @@ int main() {
   std::cout
       << "Enter the required final velocity of the vehicle in meters/second : "
       << std::endl;
-  /// Required velocity to be achieved is given as user input
+  // Required velocity to be achieved is given as user input
   std::cin >> requiredVel;
   std::cout
-      << "Enter the desired final position (x and y coordinates) of the vehicle : "
+      << "Enter the desired position (x and y coordinates) of the vehicle : "
       << std::endl;
-  /// Desired final position of the vehicle is given as vector of x and y coordinates
+  // Desired position of the vehicle is given as user input
   for (int i = 0; i < 2; i++) {
     std::cin >> input;
     requiredD.push_back(input);
-
   }
   std::cout << "Enter the final orientation of the vehicle in degrees : "
             << std::endl;
-  /// Final orientation to be achieved by the vehicle is given as user input
+  // Final orientation to be achieved by the vehicle is given as user input
   std::cin >> requiredTheta;
   std::cout << "Enter the initial orientation of the vehicle in degrees : "
             << std::endl;
-  /// Initial orientation of the vehicle is given as user input
+  // Initial orientation of the vehicle is given as user input
   std::cin >> currentTheta;
   std::cout << "Enter the initial position of the vehicle: " << std::endl;
-  /// Initial position of the vehicle is given as vector of x and y coordinates
+  // Initial position of the vehicle is given as vector of x and y coordinates
   for (int i = 0; i < 2; i++) {
     std::cin >> input;
     currentD.push_back(input);
-
   }
   std::cout << "Enter the current velocity of the vehicle in meters/second : "
             << std::endl;
-  /// Current velocity of the vehicle is given as user input
+  // Current velocity of the vehicle is given as user input
   std::cin >> currentVel;
   std::cout << "Enter the wheel base of the vehicle in meters : " << std::endl;
-  /// Wheel base of the vehicle is given as user input
+  // Wheel base of the vehicle is given as user input
   std::cin >> wheelBase;
 
   AckermannController ackermann;
@@ -65,7 +63,7 @@ int main() {
   ackermann.setD(currentD);
   ackermann.computeSteering(requiredD, requiredTheta);
   driveWheelVel = ackermann.driveVelocities(requiredVel, requiredTheta);
-  /// Output the values of two drive wheel velocities
+  // Output the values of two drive wheel velocities
   std::cout << "Required Velocity to be achieved by the vehicle: "
             << requiredVel << std::endl;
   std::cout << "Drive Wheel Velocity of inner wheel : " << driveWheelVel[0]

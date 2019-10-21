@@ -1,0 +1,16 @@
+Run the following command:
+
+cppcheck --enable=all --std=c++11 -I include/ --suppress=missingIncludeSystem $( find . -name *.cpp | grep -vE -e "^./build/" -e "^./vendor/" )
+
+Output: 
+
+Checking app/AckermannController.cpp...
+[include/AckermannController.hpp:26]: (style) The class 'AckermannController' does not have a constructor.
+1/4 files checked 48% done
+Checking app/main.cpp...
+2/4 files checked 65% done
+Checking test/AckermannControllerTest.cpp...
+3/4 files checked 93% done
+Checking test/main.cpp...
+4/4 files checked 100% done
+

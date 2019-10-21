@@ -73,8 +73,8 @@ https://docs.google.com/document/d/1J0LnjzFeFTjiL9_Y2tFDYUIMMvFZcaay7bFY-L6reKw/
 - [x] Perform testing and fix defects if any.
 - [x] Run cpplint and cppcheck as part of Sprint 2.
 - [x] Run Valgrind to detect memory leaks. Fix all detected memory leaks.
-- [ ] Generate Doxygen documentation in the docs folder.
-- [ ] Make sure that the repository is updated with all delivarables as mentioned in the proposal.
+- [x] Generate Doxygen documentation in the docs folder.
+- [x] Make sure that the repository is updated with all delivarables as mentioned in the proposal.
 
 ## Discovered bugs in the code
 - After attaining stability, the orientation error fluctuates between threshold values.

@@ -166,6 +166,23 @@ debugger window.
 7. Press Terminate icon to terminate debugging and press C/C++ icon to switch back to C/C++ 
 perspetive view (or Windows->Perspective->Open Perspective->C/C++).
 
+## Google Mock
+Google's framework for writing and using C++ mock classes. It can help you derive better designs of your system and write better tests.
+
+Google Mock:
+
+- Provides a declarative syntax for defining mocks,
+- Can define partial (hybrid) mocks, which are a cross of real and mock objects,
+- Handles functions of arbitrary types and overloaded functions,
+- Comes with a rich set of matchers for validating function arguments,
+- Uses an intuitive syntax for controlling the behavior of a mock,
+- Does automatic verification of expectations (no record-and-replay needed),
+- Allows arbitrary (partial) ordering constraints on function calls to be expressed,
+- Lets a user extend it by defining new matchers and actions.
+- Does not use exceptions, and
+- Is easy to learn and use.
+
+In our code, Googe mock was used to test the drive velocities and steering angle obtained.
 
 ## Plugins
 
